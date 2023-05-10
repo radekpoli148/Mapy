@@ -12,7 +12,7 @@ public class Mapy
 {
     public static void main(String[] args) 
     {
-        TreeMap<Integer, Pracownik> mapa = new TreeMap(); //TreeMap
+        LinkedHashMap<Integer, Pracownik> mapa = new LinkedHashMap(); //TreeMap - mozna uzyc zamiast LinkedHashMap
         
         Pracownik[] pracownicy = 
         {
@@ -51,8 +51,10 @@ public class Mapy
         }
         
         //Sub mapy - podzbiory
+        System.out.println();
+        TreeMap<Integer, Pracownik> mapaPosortowana = new TreeMap<Integer, Pracownik>(mapa); 
         
-        Map<Integer, Pracownik> subMapa = mapa.subMap(0, 7);
+        Map<Integer, Pracownik> subMapa = mapaPosortowana.subMap(0, 7);
         
         if(subMapa.isEmpty())
             System.out.println("pusto");
